@@ -1,6 +1,7 @@
-package org.example.reader.parser;
+package org.example.parser.costs;
 
-import org.example.Dish;
+import org.example.order.Dish;
+import org.example.parser.ColumnTextParser;
 import java.util.Map;
 import java.util.Scanner;
 

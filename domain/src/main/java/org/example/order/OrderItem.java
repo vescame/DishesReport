@@ -1,12 +1,10 @@
-package org.example;
+package org.example.order;
 
 public class OrderItem {
 
     private String dishName;
     private Integer amount;
     private Double price;
-
-    public OrderItem(){}
 
     public OrderItem(String dishName, Double price) {
         this.dishName = dishName;

@@ -1,13 +1,15 @@
 package org.example;
 
+import org.example.order.Order;
 import org.example.reader.CostsAndPricesReader;
 import org.example.reader.OrderReader;
-import org.example.reader.parser.order.NoPriceOrderParser;
-import org.example.reader.parser.order.OrderParser;
-import org.example.reader.parser.order.PricedOrderParser;
+import org.example.parser.order.NoPriceOrderParser;
+import org.example.parser.order.DefaultOrderParser;
+import org.example.parser.order.PricedOrderParser;
 import java.util.Collection;
 
 class Main {
+
     public static void main(String[] args) {
         readOnly();
     }
@@ -23,7 +25,7 @@ class Main {
 
         System.out.println("Reading order '" + orderName + "' from '" + ordersSourceDirectory + "' directory!");
 
-        final OrderParser pricedParser = new PricedOrderParser(" ");
+        final DefaultOrderParser pricedParser = new PricedOrderParser(" ");
 
         final OrderReader reader = new OrderReader(ordersSourceDirectory, pricedParser);
 
@@ -38,7 +40,7 @@ class Main {
         System.out.println("Reading all orders from '" + ordersSourceDirectory + "' directory!");
 
         final CostsAndPricesReader costsAndPricesReader = new CostsAndPricesReader("CostsAndPrices");
-        final OrderParser pricelessParser = new NoPriceOrderParser(" ", costsAndPricesReader);
+        final DefaultOrderParser pricelessParser = new NoPriceOrderParser(" ", costsAndPricesReader.readAll());
 
         final OrderReader reader = new OrderReader(ordersSourceDirectory, pricelessParser);
 

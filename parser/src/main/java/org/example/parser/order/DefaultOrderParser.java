@@ -1,20 +1,17 @@
-package org.example.reader.parser.order;
+package org.example.parser.order;
 
-import org.example.OrderItem;
-import org.example.Order;
-import org.example.reader.parser.ColumnTextParser;
-
+import org.example.order.OrderItem;
+import org.example.order.Order;
+import org.example.parser.ColumnTextParser;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-public abstract class OrderParser extends ColumnTextParser {
+public abstract class DefaultOrderParser extends ColumnTextParser {
     private final String[] fieldNames = {"dishName", "price"};
 
-    public OrderParser(String separator) {
+    public DefaultOrderParser(String separator) {
         super(separator);
     }
 

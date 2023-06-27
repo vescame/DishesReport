@@ -1,10 +1,10 @@
-package org.example;
+package org.example.order;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class Order{
+public class Order {
     private List<OrderItem> orderItems;
     private Integer NumPeople;
 

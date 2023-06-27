@@ -30,11 +30,18 @@ abstract class DefaultFileReader {
 
     private File getResourceFile(String resourceName) {
         try {
-            URL resource = getClass().getClassLoader().getResource(resourceName);
-            assert resource != null;
+            URL resource = getResourceURL(resourceName);
+            assert resource != null : "unable to read " + resourceName;
             return new File(resource.toURI());
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
+
+    private URL getResourceURL(String resourceName) {
+        final String fullResourceName = String.format("%s/%s", CURRENT_DIRECTORY, resourceName);
+        return getClass().getClassLoader().getResource(fullResourceName);
+    }
+
+    private static final String CURRENT_DIRECTORY = "./";
 }

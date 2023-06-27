@@ -1,4 +1,4 @@
-package org.example.reader.parser;
+package org.example.parser;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ public abstract class ColumnTextParser {
 
     public List<Map<String, String>> collectAll(List<String> lines) {
         return lines.stream()
-                .map(line -> doMapping(line))
+                .map(this::doMapping)
                 .toList();
     }
 

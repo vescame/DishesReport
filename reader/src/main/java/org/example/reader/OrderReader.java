@@ -1,15 +1,15 @@
 package org.example.reader;
 
-import org.example.Order;
-import org.example.reader.parser.order.OrderParser;
+import org.example.order.Order;
+import org.example.parser.order.DefaultOrderParser;
 import java.util.Collection;
 
 public final class OrderReader extends DefaultFileReader {
 
     private final String sourceDirectory;
-    private final OrderParser orderParser;
+    private final DefaultOrderParser orderParser;
 
-    public OrderReader(String sourceDirectory, OrderParser orderParser) {
+    public OrderReader(String sourceDirectory, DefaultOrderParser orderParser) {
         this.sourceDirectory = sourceDirectory;
         this.orderParser = orderParser;
     }

@@ -1,12 +1,13 @@
 package org.example.reader;
 
-import org.example.Dish;
-import org.example.reader.parser.CostsAndPricesParser;
+import org.example.order.Dish;
+import org.example.parser.costs.CostsAndPricesParser;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Scanner;
 
 public final class CostsAndPricesReader extends DefaultFileReader {
+
     private final String fileName;
     private final CostsAndPricesParser parser = new CostsAndPricesParser(" ");
 

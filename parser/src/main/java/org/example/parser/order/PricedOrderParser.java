@@ -1,8 +1,8 @@
-package org.example.reader.parser.order;
+package org.example.parser.order;
 
 import java.util.Map;
 
-public final class PricedOrderParser extends OrderParser {
+public final class PricedOrderParser extends DefaultOrderParser {
 
     public PricedOrderParser(String separator) {
         super(separator);

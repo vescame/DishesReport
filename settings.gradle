@@ -1,2 +1,5 @@
 rootProject.name = 'DishesReport'
-
+include 'reporter'
+include 'domain'
+include 'reader'
+include 'parser'
